@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.getpraly.app",
+      "sha256_cert_fingerprints": [
+        "42:3D:EF:51:FF:C9:84:4A:25:8D:55:BD:55:41:A2:E8:99:3F:8D:79:B1:DD:78:44:0F:A0:78:6A:CB:AD:6B:51"
+      ]
+    }
+  }
+]

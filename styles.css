@@ -71,3 +71,20 @@ footer {
   padding: 24px 0 40px; color: var(--muted); font-size: .95rem;
 }
 footer p { margin: 4px 0; }
+.note { color: var(--muted); font-size: .95rem; }
+.invite-code {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 20px;
+}
+.invite-code code {
+  font-size: clamp(1.3rem, 6vw, 1.8rem); letter-spacing: .08em;
+  color: var(--primary); user-select: all;
+}
+.button {
+  display: inline-block; padding: 12px 24px; border-radius: 999px;
+  background: var(--primary); color: var(--bg); border: 1px solid var(--primary);
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.button.secondary { background: transparent; color: var(--primary); padding: 8px 16px; }
+.stores { display: flex; flex-wrap: wrap; gap: 12px; }

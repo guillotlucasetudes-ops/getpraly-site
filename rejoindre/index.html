@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rejoindre un foyer · Praly</title>
+  <meta name="description" content="Invitation à rejoindre un foyer dans l'application Praly.">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#1C3A2F">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="doc">
+  <header class="wrap">
+    <a class="logo" href="/"><span class="logo-mark">P</span>Praly</a>
+  </header>
+
+  <main class="wrap">
+    <h1>Rejoindre un foyer</h1>
+
+    <!-- Le code est dans le fragment (#…) : le navigateur ne l'envoie jamais
+         au serveur, il ne quitte pas l'appareil. -->
+    <div id="with-code" hidden>
+      <p class="lead">On vous invite à rejoindre un foyer dans Praly. Ouvrez l'application, ou saisissez ce code dans Réglages → Foyer → « Rejoindre un autre foyer ».</p>
+      <div class="invite-code">
+        <code id="code"></code>
+        <button type="button" class="button secondary" id="copy">Copier</button>
+      </div>
+      <p class="note" id="copied" role="status"></p>
+      <p><a class="button" id="open">Ouvrir l'app</a></p>
+      <p class="note">L'invitation est valable 7 jours et ne sert qu'une fois.</p>
+    </div>
+
+    <div id="without-code">
+      <p class="lead">Ce lien d'invitation est incomplet. Demandez à la personne qui vous l'a envoyé de le renvoyer, ou de vous donner le code à saisir dans l'application.</p>
+    </div>
+
+    <h2>Pas encore l'application ?</h2>
+    <div class="stores">
+      <span class="badge">Bientôt sur Google Play</span>
+      <span class="badge">Bientôt sur l'App Store</span>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <p>Contact : <a href="mailto:contact@getpraly.fr">contact@getpraly.fr</a></p>
+    <p><a href="/confidentialite/">Politique de confidentialité</a> · <a href="/mentions-legales/">Mentions légales</a></p>
+  </footer>
+
+  <script>
+    // Même règle que l'app (parseInvitationCode) : 12 caractères, tirets et
+    // espaces ignorés, montrés XXXX-XXXX-XXXX.
+    (function () {
+      var raw = decodeURIComponent(location.hash.slice(1))
+        .toUpperCase().replace(/[^0-9A-Z]/g, '');
+      if (raw.length !== 12) return;
+      var code = raw.slice(0, 4) + '-' + raw.slice(4, 8) + '-' + raw.slice(8);
+      document.getElementById('code').textContent = code;
+      document.getElementById('open').href =
+        'praly://rejoindre?code=' + encodeURIComponent(raw);
+      document.getElementById('with-code').hidden = false;
+      document.getElementById('without-code').hidden = true;
+      document.getElementById('copy').addEventListener('click', function () {
+        var status = document.getElementById('copied');
+        if (!navigator.clipboard) {
+          status.textContent = 'Copie impossible ici : sélectionnez le code.';
+          return;
+        }
+        navigator.clipboard.writeText(code).then(function () {
+          status.textContent = 'Code copié.';
+        }, function () {
+          status.textContent = 'Copie impossible ici : sélectionnez le code.';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
