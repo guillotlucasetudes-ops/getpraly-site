@@ -72,6 +72,8 @@ footer {
 }
 footer p { margin: 4px 0; }
 .note { color: var(--muted); font-size: .95rem; }
+/* Brouillon : information encore à fournir, à retirer avant la mise en ligne. */
+mark.todo { background: #FFE08A; color: #1A1A1A; padding: 0 4px; border-radius: 4px; }
 .invite-code {
   display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
   background: var(--card); border: 1px solid var(--border);
