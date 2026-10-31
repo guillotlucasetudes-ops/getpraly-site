@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.fr.getpraly.app"],
+        "appIDs": ["YA4FZ92K53.fr.getpraly.app"],
         "components": [
           { "/": "/rejoindre", "comment": "Invitation à rejoindre un foyer" },
           { "/": "/rejoindre/", "comment": "Invitation à rejoindre un foyer" }
