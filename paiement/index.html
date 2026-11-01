@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paiement · Praly</title>
+  <meta name="description" content="Paiement d'un achat de l'application Praly, par Paddle, revendeur officiel.">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#1C3A2F">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="doc">
+  <header class="wrap">
+    <a class="logo" href="/"><span class="logo-mark">P</span>Praly</a>
+  </header>
+
+  <main class="wrap">
+    <h1>Paiement</h1>
+
+    <div id="waiting">
+      <p class="lead">Ouverture du paiement sécurisé…</p>
+    </div>
+    <div id="completed" hidden>
+      <p class="lead">Paiement terminé, merci. Retournez dans Praly : votre achat y apparaît dans quelques secondes.</p>
+      <p class="note">Paddle vous envoie son reçu par e-mail, et Praly la confirmation de la commande.</p>
+    </div>
+    <div id="closed" hidden>
+      <p class="lead">Le paiement a été fermé avant la fin, rien n'a été payé. Retournez dans Praly pour recommencer depuis la Boutique.</p>
+    </div>
+    <div id="failed" hidden>
+      <p class="lead">Le paiement n'a pas pu s'ouvrir. Retournez dans Praly et réessayez depuis la Boutique. Si cela continue, écrivez-nous à <a href="mailto:contact@getpraly.fr">contact@getpraly.fr</a>.</p>
+    </div>
+    <div id="no-transaction" hidden>
+      <p class="lead">Cette page ouvre les paiements lancés depuis la Boutique de l'application Praly sur Windows, Linux et le web. Choisissez une offre dans l'application : elle vous amène ici.</p>
+      <p>Voir les <a href="/#tarifs">tarifs</a>.</p>
+    </div>
+
+    <p class="note">Le paiement est traité par Paddle (Paddle.com Market Limited), revendeur officiel de Praly, qui encaisse, émet la facture et applique ses <a href="https://www.paddle.com/legal/checkout-buyer-terms">conditions d'achat</a> en plus de nos <a href="/conditions-de-vente/">conditions de vente</a>. Praly ne voit jamais vos coordonnées bancaires.</p>
+  </main>
+
+  <footer class="wrap">
+    <p>Contact : <a href="mailto:contact@getpraly.fr">contact@getpraly.fr</a></p>
+    <p><a href="/confidentialite/">Politique de confidentialité</a> · <a href="/conditions/">Conditions d'utilisation</a> · <a href="/conditions-de-vente/">Conditions de vente</a> · <a href="/mentions-legales/">Mentions légales</a></p>
+  </footer>
+
+  <!-- Jeton côté client de Paddle (Developer tools → Authentication →
+       Client-side tokens) : public, fait pour être dans la page. -->
+  <script src="/paiement/paiement.js" data-environment="production" data-token="live_A_REMPLACER"></script>
+</body>
+</html>
