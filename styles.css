@@ -89,4 +89,5 @@ mark.todo { background: #FFE08A; color: #1A1A1A; padding: 0 4px; border-radius: 
   font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
 }
 .button.secondary { background: transparent; color: var(--primary); padding: 8px 16px; }
+.open-app { margin-top: 20px; }
 .stores { display: flex; flex-wrap: wrap; gap: 12px; }
