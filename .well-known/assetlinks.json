@@ -5,6 +5,8 @@
       "namespace": "android_app",
       "package_name": "fr.getpraly.app",
       "sha256_cert_fingerprints": [
+        "0C:EF:5B:5E:72:88:01:38:7F:9A:15:C5:64:52:2C:AD:31:E9:5E:97:CE:0B:D6:1A:1F:C8:58:7A:35:05:80:26",
+        "D0:11:F5:B9:56:D3:98:75:96:DB:99:6A:D2:AA:2B:DC:89:44:B3:C2:73:96:3F:E4:8E:D3:19:22:C3:7A:3A:32",
         "42:3D:EF:51:FF:C9:84:4A:25:8D:55:BD:55:41:A2:E8:99:3F:8D:79:B1:DD:78:44:0F:A0:78:6A:CB:AD:6B:51"
       ]
     }
