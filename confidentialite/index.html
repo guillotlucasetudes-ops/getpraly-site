@@ -17,7 +17,7 @@
 
   <main class="wrap">
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 21 novembre 2026</p>
+    <p class="updated">Dernière mise à jour : 22 novembre 2026</p>
 
     <p>Cette page explique quelles données l'application Praly et le site getpraly.fr utilisent, pourquoi, avec qui elles sont partagées, combien de temps elles sont gardées et comment les supprimer.</p>
 
@@ -92,6 +92,11 @@
             <td>Intérêt légitime (sécurité)</td>
           </tr>
           <tr>
+            <td><strong>Vérification anti-robot</strong> : juste avant une connexion en invité, une inscription ou une connexion par email, une demande de mot de passe oublié ou le renvoi d'un code, l'adresse IP et des informations techniques sur l'appareil et le navigateur (type, langue, comportement de la page de vérification), analysées par Cloudflare Turnstile. Aucun cookie, ni votre email, ni l'identifiant de votre compte.</td>
+            <td>Empêcher la création automatique de comptes et les abus du service.</td>
+            <td>Intérêt légitime (sécurité)</td>
+          </tr>
+          <tr>
             <td><strong>Emails envoyés</strong> : votre adresse email, pour vous envoyer un code à l'inscription, pour réinitialiser un mot de passe oublié ou pour confirmer un changement d'adresse.</td>
             <td>Vérifier que l'adresse vous appartient.</td>
             <td>Exécution du service</td>
@@ -128,7 +133,7 @@
 
     <h2>5. Qui a accès à vos données</h2>
     <p><strong>Foyer partagé</strong> : si vous invitez d'autres personnes dans votre foyer (ou en rejoignez un), les comptes de ce foyer voient ses membres, son stock, ses ustensiles, son planning, ses listes de courses, les recettes de chacun et les lots de recettes débloqués par l'un d'eux (sans dire lequel). Vos notes personnelles, votre note en étoiles, vos favoris, vos collections, vos semaines sauvegardées, vos préférences, votre abonnement et vos tickets restent à vous seul. Ce que chacun peut modifier dépend de son rôle, choisi par le créateur du foyer.</p>
-    <p>En dehors de votre foyer, personne d'autre que vous n'y a accès, à part l'administrateur de Praly dans le cadre du support (§4) et les entreprises ci-dessous. Les prestataires techniques (Supabase, Sentry, Resend, GitHub, OVHcloud) les traitent pour notre compte et selon nos instructions ; Google, Apple et Paddle, pour la connexion, les paiements et la publicité, agissent comme responsables de leurs propres traitements.</p>
+    <p>En dehors de votre foyer, personne d'autre que vous n'y a accès, à part l'administrateur de Praly dans le cadre du support (§4) et les entreprises ci-dessous. Les prestataires techniques (Supabase, Sentry, Resend, Cloudflare, GitHub, OVHcloud) les traitent pour notre compte et selon nos instructions ; Google, Apple et Paddle, pour la connexion, les paiements et la publicité, agissent comme responsables de leurs propres traitements.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -138,6 +143,7 @@
           <tr><td>Supabase</td><td>Base de données, comptes, fichiers (photos), fonctions serveur</td><td>Paris, UE</td></tr>
           <tr><td>Sentry</td><td>Suivi des erreurs de l'application et des fonctions serveur, et durée de quelques requêtes</td><td>Allemagne, UE</td></tr>
           <tr><td>Resend</td><td>Envoi des emails (codes de confirmation et de réinitialisation, confirmation des achats)</td><td>Irlande, UE</td></tr>
+          <tr><td>Cloudflare</td><td>Vérification anti-robot avant une connexion (Turnstile, §2), hébergement de l'app web et des photos du catalogue</td><td>Réseau mondial, UE comprise, et États-Unis</td></tr>
           <tr><td>Google</td><td>Connexion avec Google, seulement si vous la choisissez</td><td>UE et États-Unis</td></tr>
           <tr><td>Apple</td><td>Connexion avec Apple (iPhone), seulement si vous la choisissez</td><td>UE et États-Unis</td></tr>
           <tr><td>Google (Google Play)</td><td>Paiement des achats sur Android</td><td>UE et États-Unis</td></tr>
@@ -156,7 +162,7 @@
 
     <h2>6. Durée de conservation</h2>
     <ul>
-      <li><strong>Compte et contenu</strong> : tant que votre compte existe. Quand vous supprimez une recette, un membre du foyer ou votre compte, les données correspondantes et leurs photos sont effacées immédiatement de nos serveurs. Les sauvegardes techniques de l'hébergeur disparaissent ensuite d'elles-mêmes, en 30 jours au plus.</li>
+      <li><strong>Compte et contenu</strong> : tant que votre compte existe. Quand vous supprimez une recette, un membre du foyer ou votre compte, les données correspondantes et leurs photos sont effacées immédiatement de nos serveurs. Les sauvegardes du service, chiffrées (celles de l'hébergeur et les nôtres), en gardent une copie 30 jours au plus, puis sont effacées. Si une sauvegarde devait être restaurée, les suppressions faites depuis seraient refaites.</li>
       <li><strong>Planning</strong> : les repas de plus de 12 mois sont effacés automatiquement.</li>
       <li><strong>Quitter un foyer partagé</strong> : vos recettes vous suivent et disparaissent pour les autres ; le stock, le planning et les listes de courses restent au foyer.</li>
       <li><strong>Compte invité</strong> : supprimé avec toutes ses données quand vous vous déconnectez, ou automatiquement après 90 jours sans utilisation (personne ne pourrait plus s'y reconnecter).</li>
