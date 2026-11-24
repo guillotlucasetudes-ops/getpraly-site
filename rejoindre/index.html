@@ -81,6 +81,18 @@
         'praly://rejoindre?code=' + encodeURIComponent(raw);
       document.getElementById('with-code').hidden = false;
       document.getElementById('without-code').hidden = true;
+
+      // Android : le lien n'arrive ici que si l'app ne l'a pas pris (pas
+      // installée, ou ouvert dans le navigateur d'une messagerie). On part
+      // aussitôt : l'app si elle est là, sinon Google Play (repli du
+      // navigateur). La page reste en secours si la redirection est
+      // bloquée ; après l'installation, le lien du message ouvre l'app.
+      if (/Android/i.test(navigator.userAgent)) {
+        var play = 'https://play.google.com/store/apps/details?id=fr.getpraly.app';
+        location.href = 'intent://rejoindre?code=' + encodeURIComponent(raw) +
+          '#Intent;scheme=praly;package=fr.getpraly.app;S.browser_fallback_url=' +
+          encodeURIComponent(play) + ';end';
+      }
       document.getElementById('copy').addEventListener('click', function () {
         var status = document.getElementById('copied');
         if (!navigator.clipboard) {
