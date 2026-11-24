@@ -37,10 +37,16 @@
     </div>
 
     <h2>Pas encore l'application ?</h2>
-    <div class="stores">
-      <span class="badge">Bientôt sur Google Play</span>
-      <span class="badge">Bientôt sur l'App Store</span>
+    <p>Installez Praly, puis revenez sur ce lien et touchez « Ouvrir l'app » (ou saisissez le code).</p>
+    <!-- L'appareil du visiteur passe en premier (script plus bas). L'App
+         Store et le Microsoft Store remplaceront TestFlight et le navigateur
+         dès que leurs fiches seront publiques. -->
+    <div class="stores" id="stores">
+      <a class="button secondary" data-platform="android" href="https://play.google.com/store/apps/details?id=fr.getpraly.app" rel="nofollow">Sur Android (Google Play)</a>
+      <a class="button secondary" data-platform="ios" href="https://testflight.apple.com/join/zfSvyJRT" rel="nofollow">Sur iPhone (TestFlight)</a>
+      <a class="button secondary" data-platform="desktop" href="https://app.getpraly.fr/" rel="nofollow">Sur ordinateur (navigateur)</a>
     </div>
+    <p class="note" id="ios-note" hidden>Sur iPhone, installez d'abord <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> d'Apple, puis ouvrez le lien ci-dessus.</p>
   </main>
 
   <footer class="wrap">
@@ -49,6 +55,20 @@
   </footer>
 
   <script>
+    // Le bouton de l'appareil du visiteur passe en premier, mis en avant.
+    (function () {
+      var ua = navigator.userAgent;
+      var platform = /Android/i.test(ua) ? 'android'
+        : (/iPhone|iPad|iPod/i.test(ua) ||
+           (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) ? 'ios'
+        : 'desktop';
+      var stores = document.getElementById('stores');
+      var mine = stores.querySelector('[data-platform="' + platform + '"]');
+      mine.classList.remove('secondary');
+      stores.insertBefore(mine, stores.firstChild);
+      if (platform === 'ios') document.getElementById('ios-note').hidden = false;
+    })();
+
     // Même règle que l'app (parseInvitationCode) : 12 caractères, tirets et
     // espaces ignorés, montrés XXXX-XXXX-XXXX.
     (function () {
